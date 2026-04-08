@@ -8,6 +8,19 @@
   align-items: center;
   margin-bottom: 32px;
   min-height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.1);
+  filter: blur(80px);
 }
 
 .banner-content {
@@ -15,10 +28,20 @@
   max-width: 320px;
 }
 
+.badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 .banner-title {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 16px;
+  line-height: 1.2;
 }
 
 .banner-text {
@@ -30,13 +53,13 @@
 
 .banner-button {
   background: #fff;
-  color: #2563eb;
-  padding: 14px 24px;
-  border-radius: 10px;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.2s ease;
+  color: #333;
+  border-radius: 8px;
+  padding: 12px 20px;
 }
 
 .banner-button:hover {
