@@ -7,7 +7,7 @@ export function Banner() {
 
   return (
     <section className="banner">
-      <div className="banner-content" role="contentinfo">
+      <div className="banner-content" >
         <span className="badge">🔥 Até 50% OFF</span>
 
         <h1 className="banner-title">Ofertas da Semana</h1>
