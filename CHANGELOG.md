@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-04-08
+
 ### Added
 - Banner de ofertas com layout responsivo
 - Estrutura base da página /ofertas
