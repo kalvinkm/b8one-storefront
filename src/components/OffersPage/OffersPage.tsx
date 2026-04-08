@@ -1,7 +1,7 @@
 import { Banner } from '../Banner/Banner';
 import './OffersPage.css';
 
-export const OffersPage = () => {
+export function OffersPage() {
   return (
     <main className="page">
       <div className="container">
