@@ -1,14 +1,18 @@
 import './Banner.css';
 
-export function Banner() {
-  function handleScroll() {
-    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
-  }
+function handleScroll() {
+  const section = document.getElementById('products');
 
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+export function Banner() {
   return (
-    <section className="banner">
-      <div className="banner-content" >
-        <span className="badge">🔥 Até 50% OFF</span>
+    <section className="banner" aria-labelledby="banner-title">
+      <div className="banner-content">
+        <span id="banner-title" className="badge">🔥 Até 50% OFF</span>
 
         <h1 className="banner-title">Ofertas da Semana</h1>
 
@@ -18,6 +22,7 @@ export function Banner() {
 
         <button
           className="banner-button"
+          type="button"
           aria-label="Ver produtos em oferta"
           onClick={handleScroll}
         >
