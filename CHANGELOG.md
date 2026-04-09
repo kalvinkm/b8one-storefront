@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-04-09
+
 ### Added
 - Reusable ProductCard component
 - Product type definition for shared data structure
