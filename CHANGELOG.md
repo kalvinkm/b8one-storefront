@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-04-09
+
+### Added
+- Reusable ProductCard component
+- Product type definition for shared data structure
+- Integration of product data from JSON file
+
+### Changed
+- Refactored ProductsSection to use ProductCard component
+- Replaced static mock with dynamic product rendering
+- Improved accessibility (alt text and aria-label on button)
+- Enhanced product card UI and styling
+
 ## [0.2.0] - 2026-04-08
 
 ### Added
