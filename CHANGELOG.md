@@ -3,16 +3,25 @@
 ## [Unreleased]
 
 ### Added
-- Banner de ofertas com layout responsivo
-- Estrutura base da página /ofertas
+- Products section with responsive grid layout
+- Mock product cards for layout visualization
 
 ### Changed
-- Refinamento visual do banner (botão, tipografia e espaçamento)
+- Improved banner button interaction and UI
+- Replaced default favicon with custom shopping cart icon
+
+## [0.1.1] - 2026-04-08
+
+### Added
+- Responsive banner component
+- Base structure for /offers page
+
+### Changed
+- Banner UI improvements (button, typography and spacing)
 
 ## [0.1.0] - 2026-04-07
 
 ### Added
-
 - Initial project setup with Vite + React + TypeScript
 - ESLint and Prettier configuration
 - Base project structure following Clean Architecture principles
