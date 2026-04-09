@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-04-08
+
 ### Added
 - Products section with responsive grid layout
 - Mock product cards for layout visualization
