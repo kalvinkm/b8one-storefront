@@ -1,7 +1,12 @@
+import productsData from '../../data/productsData.json';
+import { ProductCard } from '../ProductCard/ProductCard';
+import type { Product } from '../../types/product.types';
 import './ProductsSection.css';
 
 export function ProductsSection() {
-  const mockProducts = Array.from({ length: 6 });
+  const products: Product[] = productsData.length
+    ? Array.from({ length: 6 }, () => productsData[0])
+    : [];
 
   return (
     <section
@@ -9,16 +14,12 @@ export function ProductsSection() {
       id="products"
       aria-labelledby="products-title"
     >
-      <h2 className="products-title">Produtos em destaque</h2>
-
+      <h2 id="products-title" className="products-title">
+        Produtos em destaque
+      </h2>
       <div className="products-grid">
-        {mockProducts.map((_, index) => (
-          <div className="product-card-mock" key={`product-${index}`}>
-            <div className="product-image" />
-            <h3 className="product-name">Produto Exemplo</h3>
-            <p className="product-price">R$ 99,90</p>
-            <button type="button" className="product-button">Comprar</button>
-          </div>
+        {products.map((product, index) => (
+          <ProductCard key={`${product.id}-${index}`} product={product} />
         ))}
       </div>
     </section>
