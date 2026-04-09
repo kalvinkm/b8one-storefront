@@ -22,7 +22,7 @@
 
 /* ProductCard (temporary styles) */
 
-.product-card-mock {
+.product-card {
   background: #fff;
   border-radius: 12px;
   padding: 16px;
@@ -34,7 +34,7 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.product-card-mock:hover {
+.product-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }

@@ -1,7 +1,11 @@
+import productData from '../../data/productsData.json';
 import './ProductsSection.css';
 
 export function ProductsSection() {
-  const mockProducts = Array.from({ length: 6 });
+
+  const products = productData.length
+  ? Array(6).fill(productData[0])
+  : [];
 
   return (
     <section
@@ -12,12 +16,26 @@ export function ProductsSection() {
       <h2 className="products-title">Produtos em destaque</h2>
 
       <div className="products-grid">
-        {mockProducts.map((_, index) => (
-          <div className="product-card-mock" key={`product-${index}`}>
-            <div className="product-image" />
-            <h3 className="product-name">Produto Exemplo</h3>
-            <p className="product-price">R$ 99,90</p>
-            <button type="button" className="product-button">Comprar</button>
+        {products.map((product, index) => (
+          <div className="product-card" key={`${product.id}-${index}`}>
+            <img
+              src={product.images[0]}
+              alt={product.title}
+              className="product-image"
+            />
+
+            <h3 className="product-name">{product.title}</h3>
+
+            <p className="product-price">
+              {product.price.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              })}
+            </p>
+
+            <button type="button" className="product-button">
+              Comprar
+            </button>
           </div>
         ))}
       </div>
