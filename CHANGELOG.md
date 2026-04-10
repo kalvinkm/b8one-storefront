@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-04-10
+
 ### Added
 - ProductCarouselSection component
 - Horizontal product carousel with arrow navigation
