@@ -1,12 +1,45 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect, useState } from 'react';
 import productsData from '../../data/productsData.json';
 import { ProductCard } from '../ProductCard/ProductCard';
 import type { Product } from '../../types/product.types';
 import './ProductsSection.css';
 
 export function ProductsSection() {
-  const products: Product[] = productsData.length
-    ? Array.from({ length: 6 }, () => productsData[0])
-    : [];
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    fetch('https://api.escuelajs.co/api/v1/products')
+      .then((res) => res.json())
+      .then((data) => {
+        const filtered = data.filter(
+          (item: any) => item.category.name === 'Miscellaneous',
+        );
+
+        const formatted = filtered.map((item: any) => ({
+          id: item.id,
+          title: item.title,
+          price: item.price,
+          images: item.images,
+        }));
+
+        const randomProducts = formatted
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 6);
+
+        // 👉 se vier vazio, usa fallback
+        if (randomProducts.length > 0) {
+          setProducts(randomProducts);
+        } else {
+          console.warn('No product found, using fallback');
+          setProducts(productsData);
+        }
+      })
+      .catch((error) => {
+        console.error('Erro ao buscar produtos da API:', error);
+        setProducts(productsData);
+      });
+  }, []);
 
   return (
     <section
