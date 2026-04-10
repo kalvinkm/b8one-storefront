@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import productsData from '../../data/productsData.json';
 import { ProductCard } from '../ProductCard/ProductCard';
-import type { Product, ApiProduct  } from '../../types/product.types';
+import type { Product, ApiProduct } from '../../types/product.types';
 import './ProductsSection.css';
 
 export function ProductsSection() {
@@ -12,10 +12,7 @@ export function ProductsSection() {
     fetch('https://api.escuelajs.co/api/v1/products')
       .then((res) => res.json())
       .then((data: ApiProduct[]) => {
-
-        const filtered = data.filter(
-          (item) => item.category?.name === 'Miscellaneous',
-        );
+        const filtered = data.filter((item) => item.category?.id === 80);
 
         const formatted = filtered.map((item) => ({
           id: item.id,
@@ -28,17 +25,15 @@ export function ProductsSection() {
           .sort(() => Math.random() - 0.5)
           .slice(0, 6);
 
-        if (randomProducts.length > 0) {
+        if (randomProducts.length === 6) {
           setProducts(randomProducts);
         } else {
-          console.warn('No product found, using fallback');
-          
+          console.warn('Insufficient products, using fallback');
           setProducts(productsData);
         }
       })
       .catch((error) => {
-        console.error('Erro ao buscar produtos da API:', error);
-
+        console.error('Error retrieving products from the API :', error);
         setProducts(productsData);
       })
       .finally(() => {
