@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-04-10
+
 ### Added
 - Integration with external products API (EscuelaJS)
 - Randomized product selection on each page reload
