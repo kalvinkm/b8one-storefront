@@ -7,13 +7,14 @@ import './ProductsSection.css';
 
 export function ProductsSection() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetch('https://api.escuelajs.co/api/v1/products')
       .then((res) => res.json())
       .then((data) => {
         const filtered = data.filter(
-          (item: any) => item.category.name === 'Miscellaneous',
+          (item: any) => item.category?.name === 'Miscellaneous',
         );
 
         const formatted = filtered.map((item: any) => ({
@@ -27,7 +28,6 @@ export function ProductsSection() {
           .sort(() => Math.random() - 0.5)
           .slice(0, 6);
 
-        // 👉 se vier vazio, usa fallback
         if (randomProducts.length > 0) {
           setProducts(randomProducts);
         } else {
@@ -38,6 +38,9 @@ export function ProductsSection() {
       .catch((error) => {
         console.error('Erro ao buscar produtos da API:', error);
         setProducts(productsData);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, []);
 
@@ -51,9 +54,13 @@ export function ProductsSection() {
         Produtos em destaque
       </h2>
       <div className="products-grid">
-        {products.map((product, index) => (
-          <ProductCard key={`${product.id}-${index}`} product={product} />
-        ))}
+        {isLoading
+          ? Array.from({ length: 6 }).map((_, index) => (
+              <div className="product-card-skeleton" key={index} />
+            ))
+          : products.map((product, index) => (
+              <ProductCard key={`${product.id}-${index}`} product={product} />
+            ))}
       </div>
     </section>
   );
