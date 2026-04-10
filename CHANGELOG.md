@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+### Added
+- Integration with external products API (EscuelaJS)
+- Randomized product selection on each page reload
+- Skeleton loading state for products section
+- ApiProduct type for API response typing
+
+### Changed
+- Replaced static mock rendering with dynamic API data
+- Improved data validation to ensure minimum product count
+- Added fallback to local mock data when API fails or returns insufficient items
+- Enhanced error handling for API requests
+- Improved type safety by removing usage of `any`
+
 ## [0.3.0] - 2026-04-09
 
 ### Added
