@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+### Added
+- ProductCarouselSection component
+- Horizontal product carousel with arrow navigation
+- Pagination indicators (dots)
+- Smooth transition using translateX
+
+### Changed
+- Implemented responsive carousel behavior (1 item on mobile, 4 on desktop)
+- Improved mobile UX with precise slide calculation using element width
+- Adjusted layout to prevent overflow and ensure consistent card sizing
+- Enhanced title handling with line clamp to avoid layout shifts
+
 ## [0.4.0] - 2026-04-10
 
 ### Added
