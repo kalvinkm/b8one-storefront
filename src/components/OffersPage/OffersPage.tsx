@@ -1,4 +1,5 @@
 import { Banner } from '../Banner/Banner';
+import { ProductCarouselSection } from '../ProductCarouselSection/ProductCarouselSection';
 import { ProductsSection } from '../ProductsSection/ProductsSection';
 import './OffersPage.css';
 
@@ -8,6 +9,7 @@ export function OffersPage() {
       <div className="container">
         <Banner />
         <ProductsSection />
+        <ProductCarouselSection />
       </div>
     </main>
   );
