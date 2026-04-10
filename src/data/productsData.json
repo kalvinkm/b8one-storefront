@@ -4,5 +4,35 @@
     "title": "Classic Black T-Shirt",
     "price": 34,
     "images": ["https://i.imgur.com/9DqEOV5.jpeg"]
+  },
+  {
+    "id": 437,
+    "title": "Majestic Mountain Graphic T-Shirt",
+    "price": 44,
+    "images": ["https://i.imgur.com/QkIa5tT.jpeg"]
+  },
+  {
+    "id": 438,
+    "title": "Classic Black Hooded Sweatshirt",
+    "price": 79,
+    "images": ["https://i.imgur.com/cSytoSD.jpeg"]
+  },
+  {
+    "id": 439,
+    "title": "Classic Grey Hooded Sweatshirt",
+    "price": 90,
+    "images": ["https://i.imgur.com/R2PN9Wq.jpeg"]
+  },
+  {
+    "id": 440,
+    "title": "Classic Heather Gray Hoodie",
+    "price": 69,
+    "images": ["https://i.imgur.com/cHddUCu.jpeg"]
+  },
+  {
+    "id": 441,
+    "title": "Classic Red Jogger Sweatpants",
+    "price": 98,
+    "images": ["https://i.imgur.com/9LFjwpI.jpeg"]
   }
 ]
