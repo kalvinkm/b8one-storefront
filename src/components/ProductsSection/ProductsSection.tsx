@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
 import productsData from '../../data/productsData.json';
 import { ProductCard } from '../ProductCard/ProductCard';
-import type { Product } from '../../types/product.types';
+import type { Product, ApiProduct  } from '../../types/product.types';
 import './ProductsSection.css';
 
 export function ProductsSection() {
@@ -12,12 +11,13 @@ export function ProductsSection() {
   useEffect(() => {
     fetch('https://api.escuelajs.co/api/v1/products')
       .then((res) => res.json())
-      .then((data) => {
+      .then((data: ApiProduct[]) => {
+
         const filtered = data.filter(
-          (item: any) => item.category?.name === 'Miscellaneous',
+          (item) => item.category?.name === 'Miscellaneous',
         );
 
-        const formatted = filtered.map((item: any) => ({
+        const formatted = filtered.map((item) => ({
           id: item.id,
           title: item.title,
           price: item.price,
@@ -32,11 +32,13 @@ export function ProductsSection() {
           setProducts(randomProducts);
         } else {
           console.warn('No product found, using fallback');
+          
           setProducts(productsData);
         }
       })
       .catch((error) => {
         console.error('Erro ao buscar produtos da API:', error);
+
         setProducts(productsData);
       })
       .finally(() => {
