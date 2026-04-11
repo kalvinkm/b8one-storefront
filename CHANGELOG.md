@@ -2,6 +2,19 @@
 
 ## [Unreleased]
 
+### Added
+- NewsletterSection component
+- Newsletter form with name and email inputs
+- Success modal for fake submission
+- Animated success feedback icon
+
+### Changed
+- Added form validation for required fields
+- Improved user feedback with error message and input highlighting
+
+### Fixed
+- Reset form fields after modal close
+
 ## [0.5.0] - 2026-04-10
 
 ### Added
