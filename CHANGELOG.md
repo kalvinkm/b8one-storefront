@@ -16,6 +16,12 @@
 - Adjusted layout to prevent overflow and ensure consistent card sizing
 - Enhanced title handling with line clamp to avoid layout shifts
 
+### Fixed
+- Resolved mobile layout inconsistencies across multiple viewport sizes (360px, 375px, 390px, 412px, 428px)
+- Fixed card overflow and clipping issues in mobile carousel
+- Corrected spacing and sizing behavior to ensure consistent rendering
+- Improved transition smoothness on mobile devices
+
 ## [0.4.0] - 2026-04-10
 
 ### Added
