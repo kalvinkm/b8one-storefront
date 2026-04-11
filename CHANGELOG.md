@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-04-11
+
 ### Added
 - Footer component with structured columns
 - Payment methods section with icons
