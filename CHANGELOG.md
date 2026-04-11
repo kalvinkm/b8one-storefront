@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-04-11
+
 ### Added
 - NewsletterSection component
 - Newsletter form with name and email inputs
