@@ -1,0 +1,11 @@
+.footer__payments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer__payment-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
