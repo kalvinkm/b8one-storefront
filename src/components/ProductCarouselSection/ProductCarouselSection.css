@@ -1,6 +1,7 @@
 /* SECTION */
 .carousel-section {
   margin-top: 48px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   gap: 24px;
