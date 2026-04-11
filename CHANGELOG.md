@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-04-11
+
+### Added
+- Footer component with structured columns
+- Payment methods section with icons
+- Reusable FooterPayments component
+- Dynamic rendering of payment methods using map
+
+### Changed
+- Improved layout consistency between newsletter and footer
+- Organized footer structure with responsive grid
+
 ## [0.6.0] - 2026-04-11
 
 ### Added

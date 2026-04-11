@@ -1,4 +1,5 @@
 import { Banner } from '../Banner/Banner';
+import { Footer } from '../Footer/Footer';
 import { NewsletterSection } from '../NewsletterSection/NewsletterSection';
 import { ProductCarouselSection } from '../ProductCarouselSection/ProductCarouselSection';
 import { ProductsSection } from '../ProductsSection/ProductsSection';
@@ -12,6 +13,7 @@ export function OffersPage() {
         <ProductsSection />
         <ProductCarouselSection />
         <NewsletterSection />
+        <Footer />
       </div>
     </main>
   );
