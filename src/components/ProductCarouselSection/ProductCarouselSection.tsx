@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import productsData from '../../data/productsData.json';
 import { ProductCard } from '../ProductCard/ProductCard';
 import type { Product } from '../../types/product.types';
+import { ArrowIcon } from '../Icons/ArrowIcon';
 import './ProductCarouselSection.css';
 
 export function ProductCarouselSection() {
@@ -59,8 +60,6 @@ export function ProductCarouselSection() {
 
       <div className="carousel-content">
         <div className="carousel">
-          <button onClick={handlePrev}>←</button>
-
           <div ref={trackRef} className="carousel-track">
             <div
               className="carousel-inner"
@@ -76,21 +75,35 @@ export function ProductCarouselSection() {
               ))}
             </div>
           </div>
-
-          <button onClick={handleNext}>→</button>
         </div>
 
-        <div className="carousel-dots">
-          {Array.from({ length: totalDots }).map((_, index) => (
-            <button
-              key={index}
-              className={index === currentIndex ? 'active' : ''}
-              onClick={() => {
-                const maxIndex = products.length - itemsPerView;
-                setCurrentIndex(index > maxIndex ? maxIndex : index);
-              }}
-            />
-          ))}
+        <div className="carousel-arrows-section">
+          <button
+            className="carousel-arrow carousel-arrow-left"
+            onClick={handlePrev}
+          >
+            <ArrowIcon direction="left" />
+          </button>
+
+          <div className="carousel-dots">
+            {Array.from({ length: totalDots }).map((_, index) => (
+              <button
+                key={index}
+                className={index === currentIndex ? 'active' : ''}
+                onClick={() => {
+                  const maxIndex = products.length - itemsPerView;
+                  setCurrentIndex(index > maxIndex ? maxIndex : index);
+                }}
+              />
+            ))}
+          </div>
+
+          <button
+            className="carousel-arrow carousel-arrow-right"
+            onClick={handleNext}
+          >
+            <ArrowIcon direction="right" />
+          </button>
         </div>
       </div>
     </section>
